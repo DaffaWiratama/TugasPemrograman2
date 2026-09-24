@@ -1,13 +1,20 @@
+/*
+    Nama           : Muhammad Daffa Wiratama
+    NIM            : 26/581146/PA/24366
+    Program Studi  : Ilmu Komputer
+    Kelas          : PRG4
+*/
+
 #include <iostream>
 using namespace std;
 
 const int JUMLAH_HARI = 7;
-double hitung_rata_rata(int konsumsi_daya[], int jumlah_hari) {
+double hitung_rata_rata(int konsumsi_daya[], int JUMLAH_HARI) {
     double total = 0;
-    for (int i = 0; i < jumlah_hari; i++) {
+    for (int i = 0; i < JUMLAH_HARI; i++) {
         total += konsumsi_daya[i];
     }
-    return total / jumlah_hari;
+    return total / JUMLAH_HARI;
 }
 
 int main() {
@@ -32,6 +39,10 @@ int main() {
             konsumsi_terendah_hari = i+1;
         }
     }
+    
+    if (total_konsumsi<0) {
+        cout<<"Peringatan: Nilai bersifat negatif"<<endl;
+    }
 
     cout<<"Total konsumsi daya selama seminggu adalah: "<<total_konsumsi<<endl;
     cout<<"Rata-rata konsumsi daya selama seminggu adalah: "<<rata_rata<<endl;
@@ -52,7 +63,5 @@ int main() {
 
     cout<<"Jumlah hari dengan konsumsi daya di atas rata-rata adalah: "<<konsumsi_diatas_rata_rata<<endl;
 
-    if (total_konsumsi<0) {
-        cout<<"Terjadi kesdalahan input data"<<endl;
-    }
+    
 }
